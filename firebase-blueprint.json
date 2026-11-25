@@ -1,0 +1,471 @@
+{
+  "entities": {
+    "AdminRole": {
+      "title": "AdminRole",
+      "description": "Trusted administrator grant document keyed by Firebase Auth UID.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "email": { "type": "string", "minLength": 3, "maxLength": 160 },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email", "createdAt"]
+    },
+    "StaffAccess": {
+      "title": "StaffAccess",
+      "description": "Trusted Firebase Auth UID to restaurant staff role mapping.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "name": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "role": { "type": "string", "enum": ["Owner", "Admin", "Cashier", "Kitchen", "Delivery Manager", "Rider"] },
+        "phone": { "type": "string", "minLength": 4, "maxLength": 30 },
+        "active": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "name", "role", "phone", "active", "createdAt", "updatedAt"]
+    },
+    "MenuItem": {
+      "title": "MenuItem",
+      "description": "Public restaurant menu item with pricing, availability, and recipe ingredients.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "category": { "type": "string", "enum": ["Burgers", "Chicken", "Pizza", "Fries", "Drinks", "Combos"] },
+        "description": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "price": { "type": "number" },
+        "imageUrl": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "available": { "type": "boolean" },
+        "bestseller": { "type": "boolean" },
+        "featured": { "type": "boolean" },
+        "prepMinutes": { "type": "number" },
+        "comboUpgradePrice": { "type": "number" },
+        "sizes": { "type": "array" },
+        "extras": { "type": "array" },
+        "recipe": { "type": "array" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name", "category", "description", "price", "imageUrl", "available", "prepMinutes", "recipe", "createdAt", "updatedAt"]
+    },
+    "GroupPackage": {
+      "title": "GroupPackage",
+      "description": "Predefined office, school, or event bulk package.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "audience": { "type": "string", "enum": ["Office", "School", "Party"] },
+        "headcount": { "type": "number" },
+        "description": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "pricePerPack": { "type": "number" },
+        "itemsSummary": { "type": "array" },
+        "imageUrl": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name", "audience", "headcount", "description", "pricePerPack", "itemsSummary", "imageUrl", "updatedAt"]
+    },
+    "Campaign": {
+      "title": "Campaign",
+      "description": "Promotional discount or free delivery campaign.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "code": { "type": "string", "minLength": 2, "maxLength": 32 },
+        "type": { "type": "string", "enum": ["Percentage", "Fixed", "Free Delivery", "First Order", "Birthday", "Group Offer", "Referral"] },
+        "value": { "type": "number" },
+        "minOrderAmount": { "type": "number" },
+        "scheduleLabel": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "active": { "type": "boolean" },
+        "ordersGenerated": { "type": "number" },
+        "revenueGenerated": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name", "code", "type", "value", "minOrderAmount", "scheduleLabel", "active", "ordersGenerated", "revenueGenerated", "createdAt", "updatedAt"]
+    },
+    "StoreSettings": {
+      "title": "StoreSettings",
+      "description": "Public restaurant storefront configuration and sandbox flags.",
+      "type": "object",
+      "properties": {
+        "restaurantName": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "tagline": { "type": "string", "minLength": 1, "maxLength": 240 },
+        "address": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "locationPin": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "phone": { "type": "string", "minLength": 4, "maxLength": 30 },
+        "whatsappNumber": { "type": "string", "minLength": 4, "maxLength": 30 },
+        "openingHours": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "currency": { "type": "string", "minLength": 2, "maxLength": 10 },
+        "deliveryFeeBase": { "type": "number" },
+        "freeDeliveryThreshold": { "type": "number" },
+        "deliveryTargetMinutes": { "type": "number" },
+        "activePromoBanner": { "type": "string", "maxLength": 240 },
+        "sandboxMode": { "type": "object" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["restaurantName", "tagline", "address", "locationPin", "phone", "whatsappNumber", "openingHours", "currency", "deliveryFeeBase", "freeDeliveryThreshold", "deliveryTargetMinutes", "activePromoBanner", "sandboxMode", "updatedAt"]
+    },
+    "QRChannel": {
+      "title": "QRChannel",
+      "description": "Trackable QR code channel for tables, flyers, and packaging.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "label": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "channelType": { "type": "string", "enum": ["Table", "Flyer", "Packaging", "Social"] },
+        "sourceCode": { "type": "string", "minLength": 1, "maxLength": 64, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "scans": { "type": "number" },
+        "ordersCount": { "type": "number" },
+        "revenue": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "label", "channelType", "sourceCode", "scans", "ordersCount", "revenue", "createdAt", "updatedAt"]
+    },
+    "CustomerProfile": {
+      "title": "CustomerProfile",
+      "description": "Private customer CRM profile keyed by Firebase Auth UID containing PII and loyalty state.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "userId": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "phone": { "type": "string", "minLength": 4, "maxLength": 30 },
+        "email": { "type": "string", "maxLength": 160 },
+        "birthday": { "type": "string", "maxLength": 20 },
+        "firstOrderAt": { "type": "string", "maxLength": 64 },
+        "lastOrderAt": { "type": "string", "maxLength": 64 },
+        "orderCount": { "type": "number" },
+        "totalSpent": { "type": "number" },
+        "burgerStamps": { "type": "number" },
+        "loyaltyPoints": { "type": "number" },
+        "rewardsAvailable": { "type": "number" },
+        "favoriteItems": { "type": "array" },
+        "segment": { "type": "string", "enum": ["First-Time", "Returning", "VIP", "At-Risk"] },
+        "notes": { "type": "string", "maxLength": 500 },
+        "marketingOptIn": { "type": "boolean" },
+        "referralCode": { "type": "string", "minLength": 2, "maxLength": 32 },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "name", "phone", "firstOrderAt", "lastOrderAt", "orderCount", "totalSpent", "burgerStamps", "loyaltyPoints", "rewardsAvailable", "favoriteItems", "segment", "notes", "marketingOptIn", "referralCode", "createdAt", "updatedAt"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Customer order with line items, payment status, fulfillment info, and status history.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "userId": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "orderNumber": { "type": "string", "minLength": 3, "maxLength": 32, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" },
+        "createdAtIso": { "type": "string", "maxLength": 64 },
+        "updatedAtIso": { "type": "string", "maxLength": 64 },
+        "scheduledFor": { "type": "string", "maxLength": 64 },
+        "isGroupOrder": { "type": "boolean" },
+        "groupOrgName": { "type": "string", "maxLength": 120 },
+        "qrSource": { "type": "string", "maxLength": 64 },
+        "customerId": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "customerName": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "customerPhone": { "type": "string", "minLength": 4, "maxLength": 30 },
+        "customerEmail": { "type": "string", "maxLength": 160 },
+        "marketingOptIn": { "type": "boolean" },
+        "fulfillmentType": { "type": "string", "enum": ["Delivery", "Pickup"] },
+        "deliveryZone": { "type": "string", "maxLength": 80 },
+        "deliveryAddress": { "type": "string", "maxLength": 240 },
+        "locationPin": { "type": "string", "maxLength": 64 },
+        "items": { "type": "array" },
+        "subtotal": { "type": "number" },
+        "discount": { "type": "number" },
+        "promoCode": { "type": "string", "maxLength": 32 },
+        "deliveryFee": { "type": "number" },
+        "total": { "type": "number" },
+        "paymentMethod": { "type": "string", "enum": ["MTN Mobile Money", "Airtel Money", "Pay on Delivery", "Pay at Restaurant"] },
+        "paymentStatus": { "type": "string", "enum": ["Pending", "Confirmed", "Failed", "Refunded"] },
+        "paymentReference": { "type": "string", "minLength": 2, "maxLength": 64 },
+        "status": { "type": "string", "enum": ["New order received", "Order confirmed", "Preparing food", "Ready for pickup", "Assigned to rider", "Out for delivery", "Delivered", "Completed", "Cancelled"] },
+        "statusHistory": { "type": "array" },
+        "priority": { "type": "string", "enum": ["Normal", "High"] },
+        "kitchenAssignee": { "type": "string", "maxLength": 100 },
+        "riderId": { "type": "string", "maxLength": 128 },
+        "riderName": { "type": "string", "maxLength": 100 },
+        "estimatedMinutes": { "type": "number" },
+        "deliveredAt": { "type": "string", "maxLength": 64 },
+        "cancellationReason": { "type": "string", "maxLength": 240 },
+        "refundAmount": { "type": "number" },
+        "inventoryDeducted": { "type": "boolean" },
+        "whatsAppSent": { "type": "boolean" },
+        "feedbackSubmitted": { "type": "boolean" }
+      },
+      "required": ["id", "userId", "orderNumber", "createdAt", "updatedAt", "createdAtIso", "updatedAtIso", "customerId", "customerName", "customerPhone", "marketingOptIn", "fulfillmentType", "items", "subtotal", "discount", "deliveryFee", "total", "paymentMethod", "paymentStatus", "paymentReference", "status", "statusHistory", "priority", "estimatedMinutes", "inventoryDeducted", "whatsAppSent"]
+    },
+    "FeedbackEntry": {
+      "title": "FeedbackEntry",
+      "description": "Customer rating and feedback tied to a verified order.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "userId": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "orderId": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "orderNumber": { "type": "string", "minLength": 3, "maxLength": 32 },
+        "customerName": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "customerPhone": { "type": "string", "minLength": 4, "maxLength": 30 },
+        "rating": { "type": "number" },
+        "foodRating": { "type": "number" },
+        "deliveryRating": { "type": "number" },
+        "comment": { "type": "string", "minLength": 1, "maxLength": 600 },
+        "status": { "type": "string", "enum": ["Open", "Resolved", "Google Review Requested"] },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "orderId", "orderNumber", "customerName", "customerPhone", "rating", "foodRating", "deliveryRating", "comment", "status", "createdAt", "updatedAt"]
+    },
+    "Rider": {
+      "title": "Rider",
+      "description": "Delivery rider profile and performance metrics.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "name": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "phone": { "type": "string", "minLength": 4, "maxLength": 30 },
+        "vehicleType": { "type": "string", "enum": ["Motorbike", "Bicycle", "Van"] },
+        "plateNumber": { "type": "string", "minLength": 2, "maxLength": 30 },
+        "status": { "type": "string", "enum": ["Available", "On Delivery", "Offline"] },
+        "completedDeliveries": { "type": "number" },
+        "failedDeliveries": { "type": "number" },
+        "avgDeliveryMinutes": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name", "phone", "vehicleType", "plateNumber", "status", "completedDeliveries", "failedDeliveries", "avgDeliveryMinutes", "createdAt", "updatedAt"]
+    },
+    "InventoryIngredient": {
+      "title": "InventoryIngredient",
+      "description": "Kitchen ingredient inventory and reorder thresholds.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "unit": { "type": "string", "minLength": 1, "maxLength": 24 },
+        "currentStock": { "type": "number" },
+        "reorderLevel": { "type": "number" },
+        "unitCost": { "type": "number" },
+        "supplierName": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "lastRestockedAt": { "type": "string", "maxLength": 64 },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name", "unit", "currentStock", "reorderLevel", "unitCost", "supplierName", "lastRestockedAt", "updatedAt"]
+    },
+    "StockMovement": {
+      "title": "StockMovement",
+      "description": "Audit trail for ingredient deductions, restocks, and waste.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "ingredientId": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "ingredientName": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "delta": { "type": "number" },
+        "reason": { "type": "string", "enum": ["Order Deduction", "Restock Purchase", "Manual Adjustment", "Waste"] },
+        "referenceId": { "type": "string", "maxLength": 64 },
+        "timestamp": { "type": "string", "maxLength": 64 },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "ingredientId", "ingredientName", "delta", "reason", "timestamp", "createdAt"]
+    },
+    "PurchaseRecord": {
+      "title": "PurchaseRecord",
+      "description": "Supplier restock purchase record.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "supplierName": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "ingredientId": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "ingredientName": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "quantity": { "type": "number" },
+        "totalCost": { "type": "number" },
+        "purchasedAt": { "type": "string", "maxLength": 64 },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "supplierName", "ingredientId", "ingredientName", "quantity", "totalCost", "purchasedAt", "createdAt"]
+    },
+    "ExpenseRecord": {
+      "title": "ExpenseRecord",
+      "description": "Operational expense entry for P&L calculation.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "category": { "type": "string", "enum": ["Ingredients", "Delivery", "Utilities", "Marketing", "Staff", "Other"] },
+        "description": { "type": "string", "minLength": 1, "maxLength": 240 },
+        "amount": { "type": "number" },
+        "recordedAt": { "type": "string", "maxLength": 64 },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "category", "description", "amount", "recordedAt", "createdAt"]
+    },
+    "AutomationRule": {
+      "title": "AutomationRule",
+      "description": "WhatsApp and SMS automation rule configuration.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "channel": { "type": "string", "enum": ["WhatsApp Sandbox", "SMS Sandbox"] },
+        "trigger": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "enabled": { "type": "boolean" },
+        "sentCount": { "type": "number" },
+        "conversionCount": { "type": "number" },
+        "lastTriggeredAt": { "type": "string", "maxLength": 64 },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name", "channel", "trigger", "enabled", "sentCount", "conversionCount", "updatedAt"]
+    },
+    "AutomationLog": {
+      "title": "AutomationLog",
+      "description": "Dispatch log of sandbox WhatsApp/SMS notifications.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "ruleName": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "channel": { "type": "string", "minLength": 1, "maxLength": 60 },
+        "recipientName": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "recipientPhone": { "type": "string", "minLength": 4, "maxLength": 30 },
+        "message": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "sentAt": { "type": "string", "maxLength": 64 },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "ruleName", "channel", "recipientName", "recipientPhone", "message", "sentAt", "createdAt"]
+    },
+    "StaffMember": {
+      "title": "StaffMember",
+      "description": "Operational staff roster entry.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "name": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "role": { "type": "string", "enum": ["Owner", "Admin", "Cashier", "Kitchen", "Delivery Manager", "Rider"] },
+        "phone": { "type": "string", "minLength": 4, "maxLength": 30 },
+        "active": { "type": "boolean" },
+        "lastActiveAt": { "type": "string", "maxLength": 64 },
+        "permissions": { "type": "array" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name", "role", "phone", "active", "lastActiveAt", "permissions", "createdAt", "updatedAt"]
+    },
+    "StaffActivity": {
+      "title": "StaffActivity",
+      "description": "Accountability audit trail of staff actions.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "staffName": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "role": { "type": "string", "enum": ["Owner", "Admin", "Cashier", "Kitchen", "Delivery Manager", "Rider"] },
+        "action": { "type": "string", "minLength": 1, "maxLength": 240 },
+        "timestamp": { "type": "string", "maxLength": 64 },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "staffName", "role", "action", "timestamp", "createdAt"]
+    },
+    "AssistantTakeoverRequest": {
+      "title": "AssistantTakeoverRequest",
+      "description": "Human staff takeover request from the menu assistant.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "userId": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "customerPrompt": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "resolved": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "createdAtIso": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["id", "userId", "customerPrompt", "resolved", "createdAt", "createdAtIso"]
+    }
+  },
+  "firestore": {
+    "/admins/{uid}": {
+      "schema": { "$ref": "#/entities/AdminRole" },
+      "description": "Admin role grants keyed by user UID."
+    },
+    "/staffUsers/{uid}": {
+      "schema": { "$ref": "#/entities/StaffAccess" },
+      "description": "Active Firebase UID to StaffRole assignments."
+    },
+    "/menu/{itemId}": {
+      "schema": { "$ref": "#/entities/MenuItem" },
+      "description": "Public restaurant menu catalog."
+    },
+    "/groupPackages/{pkgId}": {
+      "schema": { "$ref": "#/entities/GroupPackage" },
+      "description": "Public corporate, school, and party packages."
+    },
+    "/campaigns/{campaignId}": {
+      "schema": { "$ref": "#/entities/Campaign" },
+      "description": "Promotional coupon codes and campaign definitions."
+    },
+    "/settings/{settingId}": {
+      "schema": { "$ref": "#/entities/StoreSettings" },
+      "description": "Public storefront configuration at settings/public."
+    },
+    "/qrChannels/{qrId}": {
+      "schema": { "$ref": "#/entities/QRChannel" },
+      "description": "QR attribution channel metadata and scan counters."
+    },
+    "/customers/{customerId}": {
+      "schema": { "$ref": "#/entities/CustomerProfile" },
+      "description": "PII-protected customer CRM and loyalty profiles keyed by customer UID."
+    },
+    "/orders/{orderId}": {
+      "schema": { "$ref": "#/entities/Order" },
+      "description": "Customer orders isolated to owning userId or authorized staff/admin."
+    },
+    "/feedback/{feedbackId}": {
+      "schema": { "$ref": "#/entities/FeedbackEntry" },
+      "description": "Order reviews linked to verified orders."
+    },
+    "/riders/{riderId}": {
+      "schema": { "$ref": "#/entities/Rider" },
+      "description": "Delivery rider roster and performance stats."
+    },
+    "/ingredients/{ingredientId}": {
+      "schema": { "$ref": "#/entities/InventoryIngredient" },
+      "description": "Kitchen ingredient stock and reorder thresholds."
+    },
+    "/stockMovements/{movementId}": {
+      "schema": { "$ref": "#/entities/StockMovement" },
+      "description": "Stock deduction and restock audit movements."
+    },
+    "/purchases/{purchaseId}": {
+      "schema": { "$ref": "#/entities/PurchaseRecord" },
+      "description": "Supplier purchase entries."
+    },
+    "/expenses/{expenseId}": {
+      "schema": { "$ref": "#/entities/ExpenseRecord" },
+      "description": "Restaurant operating expenses."
+    },
+    "/automations/{ruleId}": {
+      "schema": { "$ref": "#/entities/AutomationRule" },
+      "description": "WhatsApp/SMS sandbox automation rules."
+    },
+    "/automationLogs/{logId}": {
+      "schema": { "$ref": "#/entities/AutomationLog" },
+      "description": "Dispatch logs for WhatsApp/SMS notifications."
+    },
+    "/staff/{staffId}": {
+      "schema": { "$ref": "#/entities/StaffMember" },
+      "description": "Staff roster display records."
+    },
+    "/staffActivity/{activityId}": {
+      "schema": { "$ref": "#/entities/StaffActivity" },
+      "description": "Staff action audit log."
+    },
+    "/takeoverRequests/{reqId}": {
+      "schema": { "$ref": "#/entities/AssistantTakeoverRequest" },
+      "description": "Customer requests for human staff takeover from AI assistant."
+    }
+  }
+}

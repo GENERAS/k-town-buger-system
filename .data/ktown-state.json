@@ -1,0 +1,1270 @@
+{
+  "settings": {
+    "restaurantName": "K Town Burger",
+    "tagline": "Flame-grilled burgers, crispy chicken & wood-fired pizza delivered in 30 minutes.",
+    "address": "Plot 18 Kira Road, Kamwokya, Kampala",
+    "locationPin": "0.3422, 32.5871",
+    "phone": "+256 772 410 890",
+    "whatsappNumber": "256772410890",
+    "openingHours": "Daily · 10:00 AM – 11:30 PM",
+    "currency": "UGX",
+    "deliveryFeeBase": 5000,
+    "freeDeliveryThreshold": 60000,
+    "deliveryTargetMinutes": 30,
+    "activePromoBanner": "Free delivery over UGX 60,000 · Use code KTOWN10 for 10% off your order",
+    "sandboxMode": {
+      "mtnMomoEnabled": true,
+      "airtelMoneyEnabled": true,
+      "whatsappApiSandbox": true,
+      "smsGatewaySandbox": true
+    }
+  },
+  "menu": [
+    {
+      "id": "m-double-smash",
+      "name": "K Town Double Smash",
+      "category": "Burgers",
+      "description": "Two seared prime beef patties, aged cheddar, caramelized onions, house pickles, and smoky K Town sauce on toasted brioche.",
+      "price": 24000,
+      "imageUrl": "/src/assets/images/menu_signature_burger_1795540364460.jpg",
+      "available": true,
+      "bestseller": true,
+      "featured": true,
+      "prepMinutes": 12,
+      "comboUpgradePrice": 9000,
+      "sizes": [
+        {
+          "id": "sz-dbl",
+          "label": "Double Patty",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-trp",
+          "label": "Triple Stack",
+          "priceDelta": 6000
+        }
+      ],
+      "extras": [
+        {
+          "id": "ex-cheese",
+          "label": "Extra Aged Cheddar",
+          "price": 2500
+        },
+        {
+          "id": "ex-bacon",
+          "label": "Crispy Beef Bacon",
+          "price": 4000
+        },
+        {
+          "id": "ex-jalapeno",
+          "label": "Pickled Jalapenos",
+          "price": 1500
+        },
+        {
+          "id": "ex-sauce",
+          "label": "Extra Smoky Sauce",
+          "price": 1500
+        }
+      ],
+      "recipe": [
+        {
+          "ingredientId": "ing-patty",
+          "quantity": 2
+        },
+        {
+          "ingredientId": "ing-bun",
+          "quantity": 1
+        },
+        {
+          "ingredientId": "ing-cheese",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "m-classic-cheese",
+      "name": "Kampala Classic Burger",
+      "category": "Burgers",
+      "description": "Single flame-grilled beef patty, melted cheddar, crisp iceberg lettuce, vine tomato, and signature peppercorn mayo.",
+      "price": 18000,
+      "imageUrl": "/src/assets/images/hero_ktown_burger_1795540364114.jpg",
+      "available": true,
+      "bestseller": true,
+      "prepMinutes": 10,
+      "comboUpgradePrice": 8500,
+      "sizes": [
+        {
+          "id": "sz-sgl",
+          "label": "Single",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-dbl",
+          "label": "Make it Double",
+          "priceDelta": 5500
+        }
+      ],
+      "extras": [
+        {
+          "id": "ex-cheese",
+          "label": "Extra Cheddar",
+          "price": 2500
+        },
+        {
+          "id": "ex-egg",
+          "label": "Fried Egg",
+          "price": 2500
+        },
+        {
+          "id": "ex-bacon",
+          "label": "Crispy Beef Bacon",
+          "price": 4000
+        }
+      ],
+      "recipe": [
+        {
+          "ingredientId": "ing-patty",
+          "quantity": 1
+        },
+        {
+          "ingredientId": "ing-bun",
+          "quantity": 1
+        },
+        {
+          "ingredientId": "ing-cheese",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "m-crispy-chicken",
+      "name": "Crispy Buttermilk Chicken Burger",
+      "category": "Chicken",
+      "description": "Crunchy 24-hour buttermilk marinated chicken thigh, tangy cabbage slaw, pickles, and chili-garlic glaze on brioche.",
+      "price": 21000,
+      "imageUrl": "/src/assets/images/menu_crispy_chicken_1795540365188.jpg",
+      "available": true,
+      "bestseller": true,
+      "featured": true,
+      "prepMinutes": 13,
+      "comboUpgradePrice": 9000,
+      "sizes": [
+        {
+          "id": "sz-std",
+          "label": "Regular Fillet",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-xl",
+          "label": "XL Double Crunch",
+          "priceDelta": 6500
+        }
+      ],
+      "extras": [
+        {
+          "id": "ex-cheese",
+          "label": "Melted Cheddar",
+          "price": 2500
+        },
+        {
+          "id": "ex-hot",
+          "label": "Nashville Hot Dust",
+          "price": 1500
+        }
+      ],
+      "recipe": [
+        {
+          "ingredientId": "ing-chicken",
+          "quantity": 1
+        },
+        {
+          "ingredientId": "ing-bun",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "m-bbq-wings",
+      "name": "Honey Sriracha Chicken Wings (8 pcs)",
+      "category": "Chicken",
+      "description": "Double-fried crispy chicken wings tossed in roasted garlic honey sriracha glaze with sesame and cooling ranch dip.",
+      "price": 22000,
+      "imageUrl": "/src/assets/images/menu_crispy_chicken_1795540365188.jpg",
+      "available": true,
+      "prepMinutes": 14,
+      "comboUpgradePrice": 8000,
+      "sizes": [
+        {
+          "id": "sz-8",
+          "label": "8 Pieces",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-16",
+          "label": "16 Pieces Share Box",
+          "priceDelta": 17000
+        }
+      ],
+      "extras": [
+        {
+          "id": "ex-ranch",
+          "label": "Extra Herb Ranch Dip",
+          "price": 2000
+        }
+      ],
+      "recipe": [
+        {
+          "ingredientId": "ing-wings",
+          "quantity": 8
+        }
+      ]
+    },
+    {
+      "id": "m-loaded-pizza",
+      "name": "Smoky Pepperoni & Grill Pizza",
+      "category": "Pizza",
+      "description": "Hand-stretched 12-inch sourdough crust topped with San Marzano tomato sauce, beef pepperoni, grilled chicken, mozzarella, and basil.",
+      "price": 34000,
+      "imageUrl": "/src/assets/images/menu_loaded_pizza_1795540365989.jpg",
+      "available": true,
+      "featured": true,
+      "prepMinutes": 16,
+      "sizes": [
+        {
+          "id": "sz-med",
+          "label": "Medium 10\"",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-lrg",
+          "label": "Large 13\"",
+          "priceDelta": 9000
+        }
+      ],
+      "extras": [
+        {
+          "id": "ex-mozz",
+          "label": "Extra Mozzarella",
+          "price": 4500
+        },
+        {
+          "id": "ex-jalapeno",
+          "label": "Fresh Jalapenos",
+          "price": 2000
+        }
+      ],
+      "recipe": [
+        {
+          "ingredientId": "ing-dough",
+          "quantity": 1
+        },
+        {
+          "ingredientId": "ing-mozz",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "m-seasoned-fries",
+      "name": "K Town Herb & Paprika Fries",
+      "category": "Fries",
+      "description": "Golden skin-on potato fries dusted with smoked paprika, sea salt, and chives, served with smoky burger dip.",
+      "price": 8500,
+      "imageUrl": "/src/assets/images/menu_combo_feast_1795540365794.jpg",
+      "available": true,
+      "prepMinutes": 6,
+      "sizes": [
+        {
+          "id": "sz-reg",
+          "label": "Regular",
+          "priceDelta": 0
+        },
+        {
+          "id": "sz-lrg",
+          "label": "Loaded Large",
+          "priceDelta": 4500
+        }
+      ],
+      "extras": [
+        {
+          "id": "ex-cheese-sauce",
+          "label": "Warm Cheddar Sauce",
+          "price": 3000
+        }
+      ],
+      "recipe": [
+        {
+          "ingredientId": "ing-fries",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "m-craft-cola",
+      "name": "Chilled Citrus Craft Cola",
+      "category": "Drinks",
+      "description": "Ice-cold sparkling cola served over crushed ice with a fresh lemon wheel.",
+      "price": 5000,
+      "imageUrl": "/src/assets/images/menu_combo_feast_1795540365794.jpg",
+      "available": true,
+      "prepMinutes": 1,
+      "recipe": [
+        {
+          "ingredientId": "ing-soda",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "m-passion-cooler",
+      "name": "Fresh Passionfruit Mint Cooler",
+      "category": "Drinks",
+      "description": "Pressed Ugandan passionfruit juice shaken with garden mint and sparkling water.",
+      "price": 7500,
+      "imageUrl": "/src/assets/images/menu_combo_feast_1795540365794.jpg",
+      "available": true,
+      "prepMinutes": 2,
+      "recipe": [
+        {
+          "ingredientId": "ing-soda",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "m-family-feast",
+      "name": "K Town Family & Squad Feast",
+      "category": "Combos",
+      "description": "2 Double Smash Burgers, 2 Crispy Chicken Burgers, 4 Crispy Tenders, 3 Large Seasoned Fries, and 4 Chilled Drinks.",
+      "price": 92000,
+      "imageUrl": "/src/assets/images/menu_combo_feast_1795540365794.jpg",
+      "available": true,
+      "bestseller": true,
+      "featured": true,
+      "prepMinutes": 18,
+      "extras": [
+        {
+          "id": "ex-dip-box",
+          "label": "4-Sauce Dipping Tray",
+          "price": 5000
+        }
+      ],
+      "recipe": [
+        {
+          "ingredientId": "ing-patty",
+          "quantity": 4
+        },
+        {
+          "ingredientId": "ing-chicken",
+          "quantity": 2
+        },
+        {
+          "ingredientId": "ing-bun",
+          "quantity": 4
+        },
+        {
+          "ingredientId": "ing-fries",
+          "quantity": 3
+        },
+        {
+          "ingredientId": "ing-soda",
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "id": "m-solo-box",
+      "name": "Smash Burger & Tenders Box",
+      "category": "Combos",
+      "description": "1 Kampala Classic Burger, 3 crispy chicken tenders, seasoned fries, smoky house dip, and a chilled cola.",
+      "price": 33000,
+      "imageUrl": "/src/assets/images/menu_combo_feast_1795540365794.jpg",
+      "available": true,
+      "prepMinutes": 13,
+      "recipe": [
+        {
+          "ingredientId": "ing-patty",
+          "quantity": 1
+        },
+        {
+          "ingredientId": "ing-bun",
+          "quantity": 1
+        },
+        {
+          "ingredientId": "ing-fries",
+          "quantity": 1
+        },
+        {
+          "ingredientId": "ing-soda",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "riders": [
+    {
+      "id": "rid-1",
+      "name": "Samuel Kato",
+      "phone": "+256 752 881 204",
+      "vehicleType": "Motorbike",
+      "plateNumber": "UFK 412B",
+      "status": "On Delivery",
+      "completedDeliveries": 142,
+      "failedDeliveries": 2,
+      "avgDeliveryMinutes": 23
+    },
+    {
+      "id": "rid-2",
+      "name": "Brian Mugisha",
+      "phone": "+256 781 304 912",
+      "vehicleType": "Motorbike",
+      "plateNumber": "UFN 905K",
+      "status": "Available",
+      "completedDeliveries": 98,
+      "failedDeliveries": 1,
+      "avgDeliveryMinutes": 21
+    },
+    {
+      "id": "rid-3",
+      "name": "Grace Nabirye",
+      "phone": "+256 704 619 338",
+      "vehicleType": "Motorbike",
+      "plateNumber": "UFL 774M",
+      "status": "Available",
+      "completedDeliveries": 116,
+      "failedDeliveries": 0,
+      "avgDeliveryMinutes": 19
+    }
+  ],
+  "customers": [
+    {
+      "id": "cust-1",
+      "name": "Amina Namukasa",
+      "phone": "+256 772 112 233",
+      "email": "amina.n@example.com",
+      "birthday": "1996-11-28",
+      "firstOrderAt": "2026-10-10T18:08:04.199Z",
+      "lastOrderAt": "2026-11-24T17:50:04.199Z",
+      "orderCount": 6,
+      "totalSpent": 248000,
+      "burgerStamps": 4,
+      "loyaltyPoints": 248,
+      "rewardsAvailable": 1,
+      "favoriteItems": [
+        "K Town Double Smash",
+        "Chilled Citrus Craft Cola"
+      ],
+      "segment": "VIP",
+      "notes": "Prefers extra pickles and contactless gate drop-off.",
+      "marketingOptIn": true,
+      "referralCode": "AMINA-KTB"
+    },
+    {
+      "id": "cust-2",
+      "name": "Daniel Ssemogerere",
+      "phone": "+256 701 554 810",
+      "firstOrderAt": "2026-11-04T18:08:04.199Z",
+      "lastOrderAt": "2026-11-24T17:59:04.199Z",
+      "orderCount": 3,
+      "totalSpent": 114000,
+      "burgerStamps": 2,
+      "loyaltyPoints": 114,
+      "rewardsAvailable": 0,
+      "favoriteItems": [
+        "Crispy Buttermilk Chicken Burger",
+        "K Town Herb & Paprika Fries"
+      ],
+      "segment": "Returning",
+      "notes": "Orders lunch from Acacia Mall offices.",
+      "marketingOptIn": true,
+      "referralCode": "DAN-KTB"
+    },
+    {
+      "id": "cust-3",
+      "name": "Ritah Tumusiime",
+      "phone": "+256 789 223 409",
+      "firstOrderAt": "2026-10-17T18:08:04.199Z",
+      "lastOrderAt": "2026-10-21T18:08:04.199Z",
+      "orderCount": 2,
+      "totalSpent": 76000,
+      "burgerStamps": 2,
+      "loyaltyPoints": 76,
+      "rewardsAvailable": 0,
+      "favoriteItems": [
+        "Smoky Pepperoni & Grill Pizza"
+      ],
+      "segment": "At-Risk",
+      "notes": "Eligible for win-back free delivery SMS/WhatsApp campaign.",
+      "marketingOptIn": true,
+      "referralCode": "RITAH-KTB"
+    },
+    {
+      "id": "cust-4",
+      "name": "Kevin Ochieng",
+      "phone": "+256 756 908 112",
+      "firstOrderAt": "2026-11-24T18:04:04.199Z",
+      "lastOrderAt": "2026-11-24T18:04:04.199Z",
+      "orderCount": 1,
+      "totalSpent": 37500,
+      "burgerStamps": 1,
+      "loyaltyPoints": 37,
+      "rewardsAvailable": 0,
+      "favoriteItems": [
+        "Smash Burger & Tenders Box"
+      ],
+      "segment": "First-Time",
+      "notes": "Scanned table QR code.",
+      "marketingOptIn": false,
+      "referralCode": "KEVIN-KTB"
+    }
+  ],
+  "orders": [
+    {
+      "id": "ord-1048",
+      "orderNumber": "KTB-1048",
+      "createdAt": "2026-11-24T18:04:04.199Z",
+      "updatedAt": "2026-11-24T18:04:04.199Z",
+      "qrSource": "table-04",
+      "customerId": "cust-4",
+      "customerName": "Kevin Ochieng",
+      "customerPhone": "+256 756 908 112",
+      "marketingOptIn": false,
+      "fulfillmentType": "Delivery",
+      "deliveryZone": "Kololo & Nakasero",
+      "deliveryAddress": "Plot 22 Upper Kololo Terrace, Gate B",
+      "locationPin": "0.3351, 32.5934",
+      "items": [
+        {
+          "menuItemId": "m-solo-box",
+          "name": "Smash Burger & Tenders Box",
+          "category": "Combos",
+          "quantity": 1,
+          "unitPrice": 33000,
+          "lineTotal": 33000,
+          "extrasLabels": [],
+          "isComboUpgrade": false
+        }
+      ],
+      "subtotal": 33000,
+      "discount": 0,
+      "deliveryFee": 5000,
+      "total": 38000,
+      "paymentMethod": "MTN Mobile Money",
+      "paymentStatus": "Pending",
+      "paymentReference": "MOMO-SBX-8841",
+      "status": "New order received",
+      "statusHistory": [
+        {
+          "status": "New order received",
+          "timestamp": "2026-11-24T18:04:04.199Z",
+          "actor": "Web Storefront",
+          "note": "Order placed via QR Table 04"
+        }
+      ],
+      "priority": "Normal",
+      "estimatedMinutes": 28,
+      "inventoryDeducted": false,
+      "whatsAppSent": true
+    },
+    {
+      "id": "ord-1047",
+      "orderNumber": "KTB-1047",
+      "createdAt": "2026-11-24T17:50:04.199Z",
+      "updatedAt": "2026-11-24T18:00:04.199Z",
+      "customerId": "cust-1",
+      "customerName": "Amina Namukasa",
+      "customerPhone": "+256 772 112 233",
+      "marketingOptIn": true,
+      "fulfillmentType": "Delivery",
+      "deliveryZone": "Bugolobi & Naguru",
+      "deliveryAddress": "Bandali Rise, Apartment 3C, Bugolobi",
+      "locationPin": "0.3204, 32.6177",
+      "items": [
+        {
+          "menuItemId": "m-double-smash",
+          "name": "K Town Double Smash",
+          "category": "Burgers",
+          "quantity": 2,
+          "unitPrice": 33000,
+          "lineTotal": 66000,
+          "sizeLabel": "Double Patty",
+          "extrasLabels": [
+            "Extra Aged Cheddar"
+          ],
+          "isComboUpgrade": true
+        }
+      ],
+      "subtotal": 66000,
+      "discount": 6600,
+      "promoCode": "KTOWN10",
+      "deliveryFee": 0,
+      "total": 59400,
+      "paymentMethod": "Airtel Money",
+      "paymentStatus": "Confirmed",
+      "paymentReference": "AIR-SBX-5519",
+      "status": "Out for delivery",
+      "statusHistory": [
+        {
+          "status": "New order received",
+          "timestamp": "2026-11-24T17:50:04.199Z",
+          "actor": "Web Storefront"
+        },
+        {
+          "status": "Order confirmed",
+          "timestamp": "2026-11-24T17:52:04.199Z",
+          "actor": "Cashier Sarah"
+        },
+        {
+          "status": "Preparing food",
+          "timestamp": "2026-11-24T17:54:04.199Z",
+          "actor": "Chef Moses"
+        },
+        {
+          "status": "Ready for pickup",
+          "timestamp": "2026-11-24T17:58:04.199Z",
+          "actor": "Chef Moses"
+        },
+        {
+          "status": "Assigned to rider",
+          "timestamp": "2026-11-24T17:59:04.199Z",
+          "actor": "Dispatch"
+        },
+        {
+          "status": "Out for delivery",
+          "timestamp": "2026-11-24T18:00:04.199Z",
+          "actor": "Samuel Kato"
+        }
+      ],
+      "priority": "High",
+      "kitchenAssignee": "Chef Moses",
+      "riderId": "rid-1",
+      "riderName": "Samuel Kato",
+      "estimatedMinutes": 25,
+      "inventoryDeducted": true,
+      "whatsAppSent": true
+    },
+    {
+      "id": "ord-1046",
+      "orderNumber": "KTB-1046",
+      "createdAt": "2026-11-24T17:59:04.199Z",
+      "updatedAt": "2026-11-24T18:03:04.199Z",
+      "customerId": "cust-2",
+      "customerName": "Daniel Ssemogerere",
+      "customerPhone": "+256 701 554 810",
+      "marketingOptIn": true,
+      "fulfillmentType": "Pickup",
+      "items": [
+        {
+          "menuItemId": "m-crispy-chicken",
+          "name": "Crispy Buttermilk Chicken Burger",
+          "category": "Chicken",
+          "quantity": 2,
+          "unitPrice": 21000,
+          "lineTotal": 42000,
+          "sizeLabel": "Regular Fillet",
+          "extrasLabels": [],
+          "isComboUpgrade": false
+        },
+        {
+          "menuItemId": "m-seasoned-fries",
+          "name": "K Town Herb & Paprika Fries",
+          "category": "Fries",
+          "quantity": 1,
+          "unitPrice": 8500,
+          "lineTotal": 8500,
+          "extrasLabels": [],
+          "isComboUpgrade": false
+        }
+      ],
+      "subtotal": 50500,
+      "discount": 0,
+      "deliveryFee": 0,
+      "total": 50500,
+      "paymentMethod": "Pay at Restaurant",
+      "paymentStatus": "Pending",
+      "paymentReference": "COUNTER-1046",
+      "status": "Preparing food",
+      "statusHistory": [
+        {
+          "status": "New order received",
+          "timestamp": "2026-11-24T17:59:04.199Z",
+          "actor": "Web Storefront"
+        },
+        {
+          "status": "Order confirmed",
+          "timestamp": "2026-11-24T18:01:04.199Z",
+          "actor": "Cashier Sarah"
+        },
+        {
+          "status": "Preparing food",
+          "timestamp": "2026-11-24T18:03:04.199Z",
+          "actor": "Chef Moses"
+        }
+      ],
+      "priority": "Normal",
+      "kitchenAssignee": "Chef Moses",
+      "estimatedMinutes": 15,
+      "inventoryDeducted": true,
+      "whatsAppSent": true
+    },
+    {
+      "id": "ord-1045",
+      "orderNumber": "KTB-1045",
+      "createdAt": "2026-11-24T17:10:04.199Z",
+      "updatedAt": "2026-11-24T17:36:04.199Z",
+      "deliveredAt": "2026-11-24T17:34:04.199Z",
+      "customerId": "cust-1",
+      "customerName": "Amina Namukasa",
+      "customerPhone": "+256 772 112 233",
+      "marketingOptIn": true,
+      "fulfillmentType": "Delivery",
+      "deliveryZone": "Kololo & Nakasero",
+      "deliveryAddress": "Plot 14 Acacia Ave",
+      "items": [
+        {
+          "menuItemId": "m-family-feast",
+          "name": "K Town Family & Squad Feast",
+          "category": "Combos",
+          "quantity": 1,
+          "unitPrice": 92000,
+          "lineTotal": 92000,
+          "extrasLabels": [],
+          "isComboUpgrade": false
+        }
+      ],
+      "subtotal": 92000,
+      "discount": 0,
+      "deliveryFee": 0,
+      "total": 92000,
+      "paymentMethod": "MTN Mobile Money",
+      "paymentStatus": "Confirmed",
+      "paymentReference": "MOMO-SBX-8790",
+      "status": "Completed",
+      "statusHistory": [
+        {
+          "status": "New order received",
+          "timestamp": "2026-11-24T17:10:04.199Z",
+          "actor": "Web Storefront"
+        },
+        {
+          "status": "Completed",
+          "timestamp": "2026-11-24T17:36:04.199Z",
+          "actor": "Brian Mugisha"
+        }
+      ],
+      "priority": "Normal",
+      "kitchenAssignee": "Chef Moses",
+      "riderId": "rid-2",
+      "riderName": "Brian Mugisha",
+      "estimatedMinutes": 24,
+      "inventoryDeducted": true,
+      "whatsAppSent": true,
+      "feedbackSubmitted": true
+    },
+    {
+      "id": "ord-1044",
+      "orderNumber": "KTB-1044",
+      "createdAt": "2026-11-22T18:08:04.199Z",
+      "updatedAt": "2026-11-22T18:08:04.199Z",
+      "deliveredAt": "2026-11-22T18:29:04.199Z",
+      "customerId": "cust-3",
+      "customerName": "Ritah Tumusiime",
+      "customerPhone": "+256 789 223 409",
+      "marketingOptIn": true,
+      "fulfillmentType": "Delivery",
+      "deliveryZone": "Kamwokya & Bukoto",
+      "deliveryAddress": "Bukoto Street, Plot 9",
+      "items": [
+        {
+          "menuItemId": "m-loaded-pizza",
+          "name": "Smoky Pepperoni & Grill Pizza",
+          "category": "Pizza",
+          "quantity": 1,
+          "unitPrice": 34000,
+          "lineTotal": 34000,
+          "sizeLabel": "Medium 10\"",
+          "extrasLabels": [],
+          "isComboUpgrade": false
+        }
+      ],
+      "subtotal": 34000,
+      "discount": 0,
+      "deliveryFee": 5000,
+      "total": 39000,
+      "paymentMethod": "Pay on Delivery",
+      "paymentStatus": "Confirmed",
+      "paymentReference": "COD-1044",
+      "status": "Completed",
+      "statusHistory": [
+        {
+          "status": "Completed",
+          "timestamp": "2026-11-22T18:08:04.199Z",
+          "actor": "Grace Nabirye"
+        }
+      ],
+      "priority": "Normal",
+      "riderId": "rid-3",
+      "riderName": "Grace Nabirye",
+      "estimatedMinutes": 21,
+      "inventoryDeducted": true,
+      "whatsAppSent": true,
+      "feedbackSubmitted": true
+    }
+  ],
+  "campaigns": [
+    {
+      "id": "camp-1",
+      "name": "K Town Welcome & Launch 10%",
+      "code": "KTOWN10",
+      "type": "Percentage",
+      "value": 10,
+      "minOrderAmount": 20000,
+      "scheduleLabel": "All Day",
+      "active": true,
+      "ordersGenerated": 42,
+      "revenueGenerated": 2380000
+    },
+    {
+      "id": "camp-2",
+      "name": "Midweek Free Delivery",
+      "code": "FREEDEL",
+      "type": "Free Delivery",
+      "value": 0,
+      "minOrderAmount": 25000,
+      "scheduleLabel": "Lunch & Dinner",
+      "active": true,
+      "ordersGenerated": 29,
+      "revenueGenerated": 1410000
+    },
+    {
+      "id": "camp-3",
+      "name": "Office & Group 15% Bundle",
+      "code": "OFFICE15",
+      "type": "Group Offer",
+      "value": 15,
+      "minOrderAmount": 150000,
+      "scheduleLabel": "Weekdays 11am–3pm",
+      "active": true,
+      "ordersGenerated": 9,
+      "revenueGenerated": 3150000
+    },
+    {
+      "id": "camp-4",
+      "name": "First Order Welcome UGX 5,000 Off",
+      "code": "FIRST5K",
+      "type": "First Order",
+      "value": 5000,
+      "minOrderAmount": 20000,
+      "scheduleLabel": "New Customers",
+      "active": true,
+      "ordersGenerated": 18,
+      "revenueGenerated": 740000
+    }
+  ],
+  "automations": [
+    {
+      "id": "auto-1",
+      "name": "Instant WhatsApp Order Confirmation",
+      "channel": "WhatsApp Sandbox",
+      "trigger": "On Order Placed",
+      "enabled": true,
+      "sentCount": 164,
+      "conversionCount": 164,
+      "lastTriggeredAt": "2026-11-24T18:04:04.199Z"
+    },
+    {
+      "id": "auto-2",
+      "name": "Win-Back Inactive Customers (30+ Days)",
+      "channel": "WhatsApp Sandbox",
+      "trigger": "30 Days Without Order",
+      "enabled": true,
+      "sentCount": 28,
+      "conversionCount": 11,
+      "lastTriggeredAt": "2026-11-23T18:08:04.199Z"
+    },
+    {
+      "id": "auto-3",
+      "name": "Buy 5 Burgers Reward Nudge",
+      "channel": "SMS Sandbox",
+      "trigger": "At 4/5 Burger Stamps",
+      "enabled": true,
+      "sentCount": 39,
+      "conversionCount": 24,
+      "lastTriggeredAt": "2026-11-24T17:50:04.199Z"
+    },
+    {
+      "id": "auto-4",
+      "name": "Post-Delivery Review Request",
+      "channel": "WhatsApp Sandbox",
+      "trigger": "15 Min After Completed",
+      "enabled": true,
+      "sentCount": 119,
+      "conversionCount": 46,
+      "lastTriggeredAt": "2026-11-24T17:38:04.199Z"
+    },
+    {
+      "id": "auto-5",
+      "name": "Opted-In Cart Abandonment Reminder",
+      "channel": "WhatsApp Sandbox",
+      "trigger": "20 Min Cart Idle (Opt-In)",
+      "enabled": false,
+      "sentCount": 14,
+      "conversionCount": 5
+    }
+  ],
+  "automationLogs": [
+    {
+      "id": "alog-1",
+      "ruleName": "Instant WhatsApp Order Confirmation",
+      "channel": "WhatsApp Sandbox",
+      "recipientName": "Kevin Ochieng",
+      "recipientPhone": "+256 756 908 112",
+      "message": "Order KTB-1048 received! Track live status and receipt via your order link.",
+      "sentAt": "2026-11-24T18:04:04.199Z"
+    },
+    {
+      "id": "alog-2",
+      "ruleName": "Buy 5 Burgers Reward Nudge",
+      "channel": "SMS Sandbox",
+      "recipientName": "Amina Namukasa",
+      "recipientPhone": "+256 772 112 233",
+      "message": "You are at 4/5 burger stamps at K Town Burger! One more burger unlocks a free reward.",
+      "sentAt": "2026-11-24T17:50:04.199Z"
+    }
+  ],
+  "ingredients": [
+    {
+      "id": "ing-patty",
+      "name": "Prime Beef Patties (120g)",
+      "unit": "pcs",
+      "currentStock": 86,
+      "reorderLevel": 30,
+      "unitCost": 3400,
+      "supplierName": "Kampala Prime Meats",
+      "lastRestockedAt": "2026-11-23T18:08:04.199Z"
+    },
+    {
+      "id": "ing-bun",
+      "name": "Toasted Brioche Buns",
+      "unit": "pcs",
+      "currentStock": 94,
+      "reorderLevel": 35,
+      "unitCost": 1100,
+      "supplierName": "K Town Bakehouse",
+      "lastRestockedAt": "2026-11-23T18:08:04.199Z"
+    },
+    {
+      "id": "ing-cheese",
+      "name": "Aged Cheddar Slices",
+      "unit": "slices",
+      "currentStock": 28,
+      "reorderLevel": 35,
+      "unitCost": 700,
+      "supplierName": "Pearl Dairy Supply",
+      "lastRestockedAt": "2026-11-21T18:08:04.199Z"
+    },
+    {
+      "id": "ing-chicken",
+      "name": "Buttermilk Chicken Fillets",
+      "unit": "pcs",
+      "currentStock": 42,
+      "reorderLevel": 20,
+      "unitCost": 3800,
+      "supplierName": "Uganda Poultry Hub",
+      "lastRestockedAt": "2026-11-23T18:08:04.199Z"
+    },
+    {
+      "id": "ing-wings",
+      "name": "Chicken Wings",
+      "unit": "pcs",
+      "currentStock": 120,
+      "reorderLevel": 40,
+      "unitCost": 950,
+      "supplierName": "Uganda Poultry Hub",
+      "lastRestockedAt": "2026-11-22T18:08:04.199Z"
+    },
+    {
+      "id": "ing-dough",
+      "name": "Artisan Pizza Dough Balls",
+      "unit": "balls",
+      "currentStock": 16,
+      "reorderLevel": 18,
+      "unitCost": 2200,
+      "supplierName": "K Town Bakehouse",
+      "lastRestockedAt": "2026-11-22T18:08:04.199Z"
+    },
+    {
+      "id": "ing-mozz",
+      "name": "Shredded Mozzarella Packs",
+      "unit": "packs",
+      "currentStock": 24,
+      "reorderLevel": 10,
+      "unitCost": 4200,
+      "supplierName": "Pearl Dairy Supply",
+      "lastRestockedAt": "2026-11-22T18:08:04.199Z"
+    },
+    {
+      "id": "ing-fries",
+      "name": "Seasoned Fries Portions",
+      "unit": "portions",
+      "currentStock": 75,
+      "reorderLevel": 25,
+      "unitCost": 1400,
+      "supplierName": "Highland Fresh Farms",
+      "lastRestockedAt": "2026-11-23T18:08:04.199Z"
+    },
+    {
+      "id": "ing-soda",
+      "name": "Chilled Cans & Coolers",
+      "unit": "units",
+      "currentStock": 110,
+      "reorderLevel": 30,
+      "unitCost": 1600,
+      "supplierName": "Century Bottlers",
+      "lastRestockedAt": "2026-11-22T18:08:04.199Z"
+    }
+  ],
+  "stockMovements": [
+    {
+      "id": "sm-1",
+      "ingredientId": "ing-patty",
+      "ingredientName": "Prime Beef Patties (120g)",
+      "delta": -4,
+      "reason": "Order Deduction",
+      "referenceId": "KTB-1047",
+      "timestamp": "2026-11-24T17:52:04.199Z"
+    },
+    {
+      "id": "sm-2",
+      "ingredientId": "ing-chicken",
+      "ingredientName": "Buttermilk Chicken Fillets",
+      "delta": -2,
+      "reason": "Order Deduction",
+      "referenceId": "KTB-1046",
+      "timestamp": "2026-11-24T18:01:04.199Z"
+    }
+  ],
+  "purchases": [
+    {
+      "id": "pur-1",
+      "supplierName": "Kampala Prime Meats",
+      "ingredientId": "ing-patty",
+      "ingredientName": "Prime Beef Patties (120g)",
+      "quantity": 100,
+      "totalCost": 340000,
+      "purchasedAt": "2026-11-23T18:08:04.199Z"
+    },
+    {
+      "id": "pur-2",
+      "supplierName": "Highland Fresh Farms",
+      "ingredientId": "ing-fries",
+      "ingredientName": "Seasoned Fries Portions",
+      "quantity": 80,
+      "totalCost": 112000,
+      "purchasedAt": "2026-11-23T18:08:04.199Z"
+    }
+  ],
+  "expenses": [
+    {
+      "id": "exp-1",
+      "category": "Ingredients",
+      "description": "Weekly beef & poultry restock",
+      "amount": 64000,
+      "recordedAt": "2026-11-23T18:08:04.199Z"
+    },
+    {
+      "id": "exp-2",
+      "category": "Delivery",
+      "description": "Rider fuel allowance & maintenance",
+      "amount": 22000,
+      "recordedAt": "2026-11-23T18:08:04.199Z"
+    },
+    {
+      "id": "exp-3",
+      "category": "Utilities",
+      "description": "Grill gas cylinders & kitchen power",
+      "amount": 18500,
+      "recordedAt": "2026-11-22T18:08:04.199Z"
+    }
+  ],
+  "feedback": [
+    {
+      "id": "fb-1",
+      "orderId": "ord-1045",
+      "orderNumber": "KTB-1045",
+      "customerName": "Amina Namukasa",
+      "customerPhone": "+256 772 112 233",
+      "rating": 5,
+      "foodRating": 5,
+      "deliveryRating": 5,
+      "comment": "Hot fries, juicy double smash, arrived in 24 minutes!",
+      "status": "Google Review Requested",
+      "createdAt": "2026-11-24T17:43:04.199Z"
+    },
+    {
+      "id": "fb-2",
+      "orderId": "ord-1044",
+      "orderNumber": "KTB-1044",
+      "customerName": "Ritah Tumusiime",
+      "customerPhone": "+256 789 223 409",
+      "rating": 4,
+      "foodRating": 5,
+      "deliveryRating": 4,
+      "comment": "Pizza crust was crisp; driver called politely at the gate.",
+      "status": "Resolved",
+      "createdAt": "2026-11-22T18:08:04.199Z"
+    }
+  ],
+  "staff": [
+    {
+      "id": "st-1",
+      "name": "Ivan Kiggundu",
+      "role": "Owner",
+      "phone": "+256 772 410 890",
+      "active": true,
+      "lastActiveAt": "2026-11-24T18:06:04.199Z",
+      "permissions": [
+        "All Modules",
+        "Financial P&L",
+        "Staff & Pricing",
+        "Refund Approvals"
+      ]
+    },
+    {
+      "id": "st-2",
+      "name": "Sarah Namono",
+      "role": "Cashier",
+      "phone": "+256 774 312 100",
+      "active": true,
+      "lastActiveAt": "2026-11-24T18:03:04.199Z",
+      "permissions": [
+        "Orders Queue",
+        "Payment Confirmation",
+        "WhatsApp Dispatch"
+      ]
+    },
+    {
+      "id": "st-3",
+      "name": "Chef Moses Okello",
+      "role": "Kitchen",
+      "phone": "+256 755 992 401",
+      "active": true,
+      "lastActiveAt": "2026-11-24T18:03:04.199Z",
+      "permissions": [
+        "Kitchen Display (KDS)",
+        "Menu 86/Availability"
+      ]
+    },
+    {
+      "id": "st-4",
+      "name": "Peter Wasswa",
+      "role": "Delivery Manager",
+      "phone": "+256 702 184 990",
+      "active": true,
+      "lastActiveAt": "2026-11-24T18:00:04.199Z",
+      "permissions": [
+        "Rider Dispatch",
+        "Delivery SLA",
+        "Failed Delivery Logs"
+      ]
+    }
+  ],
+  "staffActivity": [
+    {
+      "id": "act-1",
+      "staffName": "Sarah Namono",
+      "role": "Cashier",
+      "action": "Confirmed Airtel Money payment for KTB-1047 (AIR-SBX-5519)",
+      "timestamp": "2026-11-24T17:52:04.199Z"
+    },
+    {
+      "id": "act-2",
+      "staffName": "Chef Moses Okello",
+      "role": "Kitchen",
+      "action": "Started preparing KTB-1046 (Crispy Chicken x2)",
+      "timestamp": "2026-11-24T18:03:04.199Z"
+    },
+    {
+      "id": "act-3",
+      "staffName": "Peter Wasswa",
+      "role": "Delivery Manager",
+      "action": "Assigned rider Samuel Kato to KTB-1047",
+      "timestamp": "2026-11-24T17:59:04.199Z"
+    }
+  ],
+  "groupPackages": [
+    {
+      "id": "grp-office-10",
+      "name": "Office Team Lunch Box (10 Pax)",
+      "audience": "Office",
+      "headcount": 10,
+      "description": "6 Kampala Classic Burgers, 4 Crispy Chicken Burgers, 10 seasoned fries, 10 chilled drinks & napkins.",
+      "pricePerPack": 235000,
+      "itemsSummary": [
+        "10 Signature Burgers",
+        "10 Fries",
+        "10 Chilled Drinks"
+      ],
+      "imageUrl": "/src/assets/images/menu_combo_feast_1795540365794.jpg"
+    },
+    {
+      "id": "grp-party-25",
+      "name": "Squad & Event Feast (25 Pax)",
+      "audience": "Party",
+      "headcount": 25,
+      "description": "15 Double Smash Burgers, 10 Crispy Chicken Burgers, 6 Large Pizzas, 60 Honey Sriracha Wings & 25 drinks.",
+      "pricePerPack": 690000,
+      "itemsSummary": [
+        "25 Burgers",
+        "6 Pizzas",
+        "60 Wings",
+        "25 Drinks"
+      ],
+      "imageUrl": "/src/assets/images/menu_loaded_pizza_1795540365989.jpg"
+    },
+    {
+      "id": "grp-school-50",
+      "name": "Campus & School Carnival Pack (50 Pax)",
+      "audience": "School",
+      "headcount": 50,
+      "description": "50 Classic Beef or Crispy Chicken Burgers with seasoned fries & chilled sodas, individually labeled for easy distribution.",
+      "pricePerPack": 1080000,
+      "itemsSummary": [
+        "50 Labeled Boxes",
+        "50 Fries",
+        "50 Drinks"
+      ],
+      "imageUrl": "/src/assets/images/menu_signature_burger_1795540364460.jpg"
+    }
+  ],
+  "qrChannels": [
+    {
+      "id": "qr-1",
+      "label": "Dine-In Table 04",
+      "channelType": "Table",
+      "sourceCode": "table-04",
+      "scans": 48,
+      "ordersCount": 19,
+      "revenue": 684000
+    },
+    {
+      "id": "qr-2",
+      "label": "Acacia Mall Flyers",
+      "channelType": "Flyer",
+      "sourceCode": "flyer-acacia",
+      "scans": 112,
+      "ordersCount": 31,
+      "revenue": 1190000
+    },
+    {
+      "id": "qr-3",
+      "label": "Takeaway Box Sticker",
+      "channelType": "Packaging",
+      "sourceCode": "box-reorder",
+      "scans": 74,
+      "ordersCount": 27,
+      "revenue": 985000
+    }
+  ],
+  "takeoverRequests": []
+}

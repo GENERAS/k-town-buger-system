@@ -1,0 +1,6 @@
+{
+  "name": "K Town Burger — Smart Restaurant Growth System",
+  "description": "Complete restaurant sales, mobile-first ordering, kitchen display, rider delivery, CRM, loyalty, inventory, and owner analytics platform for K Town Burger.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
